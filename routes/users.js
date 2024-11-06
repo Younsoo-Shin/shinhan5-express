@@ -84,6 +84,11 @@ async function authenticate(req, res, next) {
   }
   next();
 }
+
+router.get('/me', authenticate, async(req,res)=>{
+  res.json(req.user);
+})
+
 router.get("/protected", authenticate, async (req, res, next) => {
   console.log(req.user);
   res.json({ data: "민감한 데이터" });

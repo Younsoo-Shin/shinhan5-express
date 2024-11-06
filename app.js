@@ -87,6 +87,9 @@ app.use('/birds', birdsRouter);
 app.use('/comment', commentRouter);
 app.use('/todos', todoRouter);
 
+app.use('/api/board', boardRouter);
+app.use('/api/users', usersRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
